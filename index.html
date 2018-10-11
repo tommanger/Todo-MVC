@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Todo MVC</title>
+</head>
+
+<body onload="init()">
+    <header>
+        <h1 class="animated tada">Todo</h1>
+        <h4>MVC - Model-View-Controller</h4>
+    </header>
+
+
+    <select id="todo-filter" onchange="onSetFilter(this.value)">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="done">Done</option>
+    </select>
+
+    <select id="todo-sort" onchange="onSetSort(this.value)">
+        <option value="time">Time</option>
+        <option value="importance">Importance</option>
+        <option value="txt">Txt</option>
+    </select>
+
+    
+    <ul class="todo-list"></ul>
+    <span class="no-todo"></span>
+    <section>
+        <h4>
+            Todos:
+            <span class="todo-count"></span>
+            Active:
+            <span class="active-count"></span>
+        </h4>
+    </section>
+
+    <hr />
+    <section class="add-todo-container">
+        <input id="newTodoTxt" type="text" placeholder="What needs to be done?" />
+
+        <select id="importance">
+            <option value="1">Most important</option>
+            <option value="2">Important</option>
+            <option value="3">Less important</option>
+        </select>
+
+        <button onclick="onAddTodo()">Add</button>
+    </section>
+
+    <script src="js/util-service.js"></script>
+    <script src="js/todo-service.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
